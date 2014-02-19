@@ -13,7 +13,7 @@ function Mapping(){
 
 	this.initialize = function(el, cb) {
 		navigator.geolocation.getCurrentPosition(function(position){
-			createMap(position)
+			createMap(position.coords)
 			cb()
 		}, error)
 	}
