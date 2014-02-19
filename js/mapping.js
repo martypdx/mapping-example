@@ -5,10 +5,14 @@ function Mapping(){
 	 ,	map, el, current
 
 	this.loadMap = function(){
-        el = document.getElementById('map-canvas')
-        self.initialize(el, function(){
-            setTimeout(self.addMarkers, 1000)
-        })
+		el = document.getElementById('map-canvas')
+	    try {
+	        self.initialize(el, function(){
+	            setTimeout(self.addMarkers, 1000)
+	        })
+		} catch(e){
+			el.innerHTML = e.toString()
+		}
     }
 
 	this.initialize = function(el, cb) {
